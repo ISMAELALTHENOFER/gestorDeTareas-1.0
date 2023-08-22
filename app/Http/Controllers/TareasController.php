@@ -31,4 +31,21 @@ class TareasController extends Controller
         $tarea = Tarea::all();
         return view('tareas.tareas', ['tarea' => $tarea]);
     }
+
+    public function show($id)
+    {
+        $tarea = Tarea::find($id);
+        return view('tareas.show', ['tarea' => $tarea]);
+    }
+
+    public function update()
+    {
+        $tarea = Tarea::all();
+        return view('tareas.tareas', ['tarea' => $tarea]);
+    }
+    public function destroy()
+    {
+        $tarea = Tarea::all();
+        return view('tareas.tareas', ['tarea' => $tarea]);
+    }
 }
