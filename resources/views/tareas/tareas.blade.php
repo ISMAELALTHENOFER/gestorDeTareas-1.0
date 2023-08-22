@@ -6,7 +6,7 @@ home se utiliza como plantilla base  --}}
 @section('content')
     <div class="container w5 border p-4 mt-4">
         {{-- se llama a la ruta home dentro del formulario y se utiliza el metodo post para enviar --}}
-        <form action="{{ route('home') }}" method="POST">
+        <form action="{{ route('home-p') }}" method="POST">
             {{-- cSrf = cross site request forgery. sirve para autenticar (token) --}}
             @csrf
             @if (session('success'))
@@ -22,5 +22,23 @@ home se utiliza como plantilla base  --}}
 
             <button type="submit" class="btn btn-primary">Crear nueva tarea</button>
         </form>
+        <div>
+
+            @foreach ($tareas as $tarea)
+                <div class="row py-1">
+                    <div class="col-md-9 d-flex align-items-center">
+                        <a href="{{ route('home-update', ['id' => $tarea->id]) }}">{{ $tarea->titulo }}</a>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-end">
+                        <form action="{{ route('home-destroy', [$tarea->id]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <BUtton class="btn btn-danger btn-sm">Eliminar</BUtton>
+
+                        </form>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection
