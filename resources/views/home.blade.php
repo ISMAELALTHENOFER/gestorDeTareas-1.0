@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,8 @@
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <title>Home</title>
+
+    <title>Todas las tareas</title>
 
 </head>
 
@@ -19,7 +20,7 @@
     {{-- se crea el navbar con las pestañas todas las tareas y categorias --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Mis tareas</a>
+            <a class="navbar-brand" href="home">Tareas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Todas las tareas </a>
+                        <a class="nav-link active" aria-current="page" href="home">Todas las tareas </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categorias</a>
@@ -42,3 +43,22 @@
 </body>
 
 </html>
+<style>
+    a {
+        text-decoration: none; //para sacar el decorado del hipervinculo
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+
+    }
+
+    .color-container {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        border-radius: 4px;
+    }
+</style>
