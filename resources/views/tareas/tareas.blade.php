@@ -1,5 +1,4 @@
-{{-- Extendemos o heredamos de la pagina home
-home se utiliza como plantilla base  --}}
+{{-- Extendemos o heredamos de la pagina home se utiliza como plantilla base  --}}
 @extends('home')
 
 {{-- con section se busca anexar esta seccion al home --}}
@@ -13,7 +12,7 @@ home se utiliza como plantilla base  --}}
                 <h6 class="alert alert-success">{{ session('success') }}</h6>
             @endif
             @error('titulo')
-                <h6 class="alert alert-danger">{{ session($message) }}</h6>
+                <h6 class="alert alert-danger">{{ $message }}</h6>
             @enderror
             <div class="mb-3">
                 <label for="title" class="form-label">Titulo de la tarea</label>
@@ -24,16 +23,16 @@ home se utiliza como plantilla base  --}}
         </form>
         <div>
 
-            @foreach ($tareas as $tarea)
+            @foreach ($tarea as $tarea)
                 <div class="row py-1">
                     <div class="col-md-9 d-flex align-items-center">
-                        <a href="{{ route('home-update', ['id' => $tarea->id]) }}">{{ $tarea->titulo }}</a>
+                        <a href="{{ route('home-show', ['id' => $tarea->id]) }}">{{ $tarea->titulo }}</a>
                     </div>
                     <div class="col-md-3 d-flex justify-content-end">
                         <form action="{{ route('home-destroy', [$tarea->id]) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <BUtton class="btn btn-danger btn-sm">Eliminar</BUtton>
+                            <BUtton class="btn btn-danger btn-sm"> Eliminar </BUtton>
 
                         </form>
                     </div>
