@@ -16,13 +16,14 @@ use App\Http\Controllers\TareasController;
 Route::get('/', function () {
     return view('welcome');
 });
+//crud de tareas
 
-Route::get('/home', [TareasController::class, 'index'])->name('home');
+Route::get('/home', [TareasController::class, 'index'])->name('home'); //muestra todas las tareas
 
-Route::post('/home-p', [TareasController::class, 'store'])->name('home-p');
+Route::post('/home-p', [TareasController::class, 'store'])->name('home-p'); // guarda una nueva tarea
 
-Route::get('/home-show/{id}', [TareasController::class, 'show'])->name('home-show');
+Route::delete('/home-destroy/{id}', [TareasController::class, 'destroy'])->name('home-destroy'); //elimina una tarea
 
-Route::patch('/home-update', [TareasController::class, 'store'])->name('home-update');
+Route::get('/home-show/{id}', [TareasController::class, 'show'])->name('home-show'); //muestra la tarea seleccionada
 
-Route::delete('/home-destroy', [TareasController::class, 'store'])->name('home-destroy');
+Route::patch('/home-update/{id}', [TareasController::class, 'update'])->name('home-update');//edita la tarea seleccionada
