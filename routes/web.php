@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TareasController;
+use App\Http\Controllers\CategoriesController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,4 +29,6 @@ Route::delete('/home-destroy/{id}', [TareasController::class, 'destroy'])->name(
 
 Route::get('/home-show/{id}', [TareasController::class, 'show'])->name('home-show'); //muestra la tarea seleccionada
 
-Route::patch('/home-update/{id}', [TareasController::class, 'update'])->name('home-update');//edita la tarea seleccionada
+Route::patch('/home-update/{id}', [TareasController::class, 'update'])->name('home-update'); //edita la tarea seleccionada
+
+Route::resource('Categoria', CategoriesController::class);
