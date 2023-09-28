@@ -31,4 +31,4 @@ Route::get('/home-show/{id}', [TareasController::class, 'show'])->name('home-sho
 
 Route::patch('/home-update/{id}', [TareasController::class, 'update'])->name('home-update'); //edita la tarea seleccionada
 
-Route::resource('Categoria', CategoriesController::class);
+Route::resource('categoria', CategoriesController::class);
