@@ -31,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="home">Todas las tareas </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categorias</a>
+                        <a class="nav-link" href="categoria">Categorias</a>
                     </li>
 
                 </ul>
