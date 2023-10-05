@@ -12,7 +12,7 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
-    <title>Todas las tareas</title>
+    <title>App Tareas</title>
 
 </head>
 
@@ -20,7 +20,7 @@
     {{-- se crea el navbar con las pestañas todas las tareas y categorias --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home">Tareas</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">Todas las tareas </a>
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/home"> Tareas </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="categoria">Categorias</a>
+                        <a class="nav-link active" href="http://127.0.0.1:8000/categoria"> Categorias </a>
                     </li>
 
                 </ul>
