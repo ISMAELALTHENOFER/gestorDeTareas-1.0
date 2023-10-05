@@ -16,9 +16,8 @@ use App\Http\Controllers\CategoriesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+
 //crud de tareas
 
 Route::get('/home', [TareasController::class, 'index'])->name('home'); //muestra todas las tareas
