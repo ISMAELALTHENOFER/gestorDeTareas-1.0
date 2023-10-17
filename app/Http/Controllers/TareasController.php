@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tarea;
+use App\Models\Categoria;
 
 class TareasController extends Controller
 {
@@ -15,8 +16,9 @@ class TareasController extends Controller
     public function index()
     {
         $tarea = Tarea::all();
-        return view('tareas.tareas', ['tarea' => $tarea]);
-    }               //carpeta.vista
+        $category = Categoria::all();
+        return view('tareas.tareas', ['tarea' => $tarea, 'categoria' => $category]);
+    }               //Metodo para mostrar todas las tareas y las categorias 
 
     public function store(Request $request)
     {
@@ -25,9 +27,10 @@ class TareasController extends Controller
             'titulo' => 'required|min:4'
 
         ]);
-        //creamos un nuevo objeto tarea y asignamos los valores ingresados a la columna
+        //creamos un nuevo objeto tarea y asignamos una categoria
         $tarea = new Tarea;
         $tarea->titulo = $request->titulo;
+        $tarea->category_id = $request->category_id;
         $tarea->save();
         //redireccionamos y damos aviso que de success 
         return redirect()->route('home')->with('success', 'Tarea creada con exito');
