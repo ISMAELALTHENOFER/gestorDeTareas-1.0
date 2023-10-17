@@ -16,7 +16,14 @@
             @enderror
             <div class="mb-3">
                 <label for="title" class="form-label">Titulo de la tarea</label>
-                <input type="text" name="titulo" class="form-control">
+                <input type="text" name="titulo" class="form-control" placeholder="Ejemplo: Comprar la cena">
+
+                <label for="category_id" class="form-label"> Categoria de la tarea </label>
+                <select name="category_id" class="form-select">
+                    @foreach ($categoria as $categoria)
+                        <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Crear nueva tarea</button>
