@@ -13,11 +13,11 @@ class AddCategoriaIdToTareasTable extends Migration
      */
     public function up()
     {
-        Schema::table('tareas', function (Blueprint $table) {
-            $table->bigInteger('category_id')->unsigned();
+        Schema::table('tareas', function (Blueprint $table) { //se modifica la tabla tareas
+            $table->bigInteger('category_id')->unsigned(); // se agrega una nueva columna
             $table
-                ->foreign('category_id')
-                ->references('id')
+                ->foreign('category_id') //se crea una clave foránea. 
+                ->references('id')      // hace referencia a la columna 'id' en la tabla 'categorias'.
                 ->on('categorias')->after('titulo');
         });
     }
