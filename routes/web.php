@@ -20,13 +20,13 @@ Route::view('/', 'welcome');
 
 //crud de tareas
 
-Route::get('/home', [TareasController::class, 'index'])->name('home'); //muestra todas las tareas
+Route::get('/tareas', [TareasController::class, 'index'])->name('tareas'); //muestra todas las tareas
 
 Route::post('/home-p', [TareasController::class, 'store'])->name('home-p'); // guarda una nueva tarea
 
 Route::delete('/home-destroy/{id}', [TareasController::class, 'destroy'])->name('home-destroy'); //elimina una tarea
 
-Route::get('/home-show/{id}', [TareasController::class, 'show'])->name('home-show'); //muestra la tarea seleccionada
+Route::get('/home-show/{id}', [TareasController::class, 'show'])->name('home-show'); //edita la tarea seleccionada
 
 Route::patch('/home-update/{id}', [TareasController::class, 'update'])->name('home-update'); //edita la tarea seleccionada
 
