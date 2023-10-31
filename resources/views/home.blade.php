@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/home"> Tareas </a>
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/tareas"> Tareas </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="http://127.0.0.1:8000/categoria"> Categorias </a>
