@@ -16,8 +16,8 @@ class TareasController extends Controller
     public function index()
     {
         $tarea = Tarea::all();
-        $category = Categoria::all();
-        return view('tareas.tareas', ['tarea' => $tarea, 'categoria' => $category]);
+        $categoria = Categoria::all();
+        return view('tareas.tareas', ['tarea' => $tarea, 'categoria' => $categoria]);
     }               //Metodo para mostrar todas las tareas y las categorias 
 
     public function store(Request $request)
@@ -30,31 +30,32 @@ class TareasController extends Controller
         //creamos un nuevo objeto tarea y asignamos una categoria
         $tarea = new Tarea;
         $tarea->titulo = $request->titulo;
-        $tarea->category_id = $request->category_id;
+        $tarea->categoria_id = $request->categoria_id;
         $tarea->save();
         //redireccionamos y damos aviso que de success 
-        return redirect()->route('home')->with('success', 'Tarea creada con exito');
+        return redirect()->route('tareas')->with('success', 'Tarea creada con exito');
     }
 
 
     public function show($id)
     {
         $tarea = Tarea::find($id);
-        return view('tareas.show', ['tarea' => $tarea]);
+        $categoria = Categoria::all();
+        return view('tareas.show', ['tarea' => $tarea, 'categoria' => $categoria]);
     }
 
-    public function update(Request $request, $id)//modifica la tarea
+    public function update(Request $request, $id) //modifica la tarea
     {
         $tarea = Tarea::find($id);
         $tarea->titulo = $request->titulo;
         $tarea->save();
 
-        return redirect()->route('home')->with('success', 'Tarea actualizada con exito');
+        return redirect()->route('tareas')->with('success', 'Tarea actualizada con exito');
     }
     public function destroy($id) //function para eliminar una tarea
     {
         $tarea = Tarea::find($id);
         $tarea->delete();
-        return redirect()->route('home')->with('success', 'Tarea Eliminada con exito');
+        return redirect()->route('tareas')->with('success', 'Tarea Eliminada con exito');
     }
 }
