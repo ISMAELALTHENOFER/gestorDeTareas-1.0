@@ -21,7 +21,7 @@
                         <h6 class="alert alert-success">{{ session('success') }}</h6>
                     @endif
 
-                    <label for="nombre" class="form-label">Nombre de la categoría</label>
+                    <label for="exampleFormControlInput1" class="form-label">Nombre de la categoría</label>
                     <input type="text" class="form-control mb-2" name="nombre" id="nombre"
                         placeholder="Ejemplo: Trabajo " value="{{ $categoria->nombre }}">
 
@@ -40,7 +40,6 @@
                             <div class="col-md-9 d-flex align-items-center">
                                 <a href="{{ route('home-show', ['id' => $tarea->id]) }}">{{ $tarea->titulo }}</a>
                             </div>
-
                             <div class="col-md-3 d-flex justify-content-end">
                                 <form action="{{ route('home-destroy', [$tarea->id]) }}" method="POST">
                                     @method('DELETE')
@@ -51,8 +50,9 @@
                         </div>
                     @endforeach
                 @else
-                    No existen tareas para esta categoría
+                    No hay tareas para esta categoría
                 @endif
+
 
             </div>
         </div>
